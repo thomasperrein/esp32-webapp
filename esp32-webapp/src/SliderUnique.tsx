@@ -1,9 +1,10 @@
 import { Slider } from "@mantine/core";
+import "./SliderUnique.css";
 
 function SliderUnique() {
   return (
-    <>
-      <h3>LED 1</h3>
+    <div style={{ width: 300, margin: "0 auto" }}>
+      <h3 className="title">LED 1</h3>
       <Slider
         color="blue"
         marks={[
@@ -12,7 +13,7 @@ function SliderUnique() {
           { value: 80, label: "80%" },
         ]}
       />
-      <h3>LED 2</h3>
+      <h3 className="title">LED 2</h3>
       <Slider
         color="blue"
         marks={[
@@ -21,7 +22,7 @@ function SliderUnique() {
           { value: 80, label: "80%" },
         ]}
       />
-      <h3>LED 3</h3>
+      <h3 className="title">LED 3</h3>
       <Slider
         color="blue"
         marks={[
@@ -30,7 +31,7 @@ function SliderUnique() {
           { value: 80, label: "80%" },
         ]}
       />
-      <h3>LED 4</h3>
+      <h3 className="title">LED 4</h3>
       <Slider
         color="blue"
         marks={[
@@ -39,7 +40,7 @@ function SliderUnique() {
           { value: 80, label: "80%" },
         ]}
       />
-    </>
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import { Container } from "@mantine/core";
+import { Container, Box } from "@mantine/core";
 import { useState } from "react";
 import SliderLEDIntensityAll from "./SliderLEDIntensityAll";
 import { LEDVChooserValues } from "./constants";
@@ -22,14 +22,28 @@ function ContainerForm() {
   return (
     <>
       <Container size="xs" {...demoProps}>
-        <LEDChooser
-          selectedValue={selectedLEDOption}
-          onLEDChange={handleLEDChange}
-        />
-        {selectedLEDOption === LEDVChooserValues.AllLEDs && (
-          <SliderLEDIntensityAll />
-        )}
-        {selectedLEDOption === LEDVChooserValues.EachLED && <SliderUnique />}
+        {/* Wrapper Box for centering and spacing */}
+        <Box
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "20px", // Spacing between elements
+            marginTop: "20px", // Optional: adjust to your needs
+          }}
+        >
+          {/* Centered LEDChooser */}
+          <LEDChooser
+            selectedValue={selectedLEDOption}
+            onLEDChange={handleLEDChange}
+          />
+
+          {/* Conditional Rendering of Sliders with margins */}
+          {selectedLEDOption === LEDVChooserValues.AllLEDs && (
+            <SliderLEDIntensityAll />
+          )}
+          {selectedLEDOption === LEDVChooserValues.EachLED && <SliderUnique />}
+        </Box>
       </Container>
     </>
   );
